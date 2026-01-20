@@ -1,14 +1,20 @@
 #include <stdio.h>
-#include <string.h>
+int a,b;
+char txt[100];
 int main(void){
-FILE *f;
-f = fopen(“{file name}”,”{opening type}”);
-if (f==NULL){
-printf(“file found !\n”);
-}
-else{
-	printf(“issue with teh file ! \n”);
-}
-getch();
-return 0;
+    printf("your age ? :"),scanf("%d",&a);
+    printf("file handling concept\n");
+    FILE *f;
+    f = fopen("text.txt","a");
+    if(f==NULL){
+        printf("error with file ! \n");
+        return 1;
+    }else{
+        printf("no issue opening the file ! \n");
+    }
+    int score;
+    score = 20;
+    fprintf(f," score : %d \n",a);
+    fclose(f);
+    return 0;
 }
